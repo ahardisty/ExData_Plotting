@@ -21,6 +21,7 @@ powerShort$fullTime <- mdy_hms(powerShort$fullTime)
 
 png("./ExData_Plotting/plot1.png", width=480, height=480)
 hist(x = powerShort$Global_active_power, 
+     # freq = T,
      col = "red", 
      xlab = "Global Active Power (kilowatts)", 
      main = "Global Active Power")

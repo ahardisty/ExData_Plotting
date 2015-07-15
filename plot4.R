@@ -1,4 +1,4 @@
-# Plot 3 Data Access ------------------------------------------------------------------
+# Plot 4 Data Access ------------------------------------------------------------------
 
 
 setwd("~")
@@ -24,7 +24,7 @@ powerShort  <- subset(powerShort, select = -c(3:9)) # delete character class var
 
 
 
-# Plot 3 Creation ---------------------------------------------------------
+# Plot 4 Creation ---------------------------------------------------------
 
 
 png("./ExData_Plotting/plot3.png", width=480, height=480)# set dimensions of plot
@@ -38,6 +38,5 @@ points(x = powerShort$fullTime,
 points(x = powerShort$fullTime,
        y = powerShort$Sub_metering_3,
        type = "l", col = "blue")
-legend("topright", lty = 1, col = c("black","red", "blue"), legend = colnames(powerShort[7:9]))
-dev.off()
+legend("topright", lty = 1, col = c("black","red", "blue"), legend = colnames(powerShort[8:10]))
 dev.off()
