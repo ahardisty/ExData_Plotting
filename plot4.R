@@ -27,7 +27,26 @@ powerShort  <- subset(powerShort, select = -c(3:9)) # delete character class var
 # Plot 4 Creation ---------------------------------------------------------
 
 
-png("./ExData_Plotting/plot3.png", width=480, height=480)# set dimensions of plot
+png(file = "./ExData_Plotting/plot4.png", width = 480, height = 480) #copy chart to png graphics device
+par(mfrow = c(2, 2), mar = c(4, 4, 2, 2)) # set margins of plot area
+# plot 1,1 Global Active Power
+plot(x = powerShort$fullTime,
+     y = powerShort$Global_active_power,
+     type = "l", 
+     xlab = "",
+     ylab = "Global Active Power")
+points(x = powerShort$fullTime,
+       y = powerShort$Global_active_power,
+       type = "l", col = "black")
+
+# plot 1,2 Voltage
+plot(x = powerShort$fullTime,
+     y = powerShort$Voltage,
+     type = "l",
+     xlab = "datetime",
+     ylab = "Voltage")
+
+# plot 2,1 Energy Submetering
 plot(x = powerShort$fullTime,
      y = powerShort$Sub_metering_1,
      type = "l", xlab = "",
@@ -38,5 +57,13 @@ points(x = powerShort$fullTime,
 points(x = powerShort$fullTime,
        y = powerShort$Sub_metering_3,
        type = "l", col = "blue")
-legend("topright", lty = 1, col = c("black","red", "blue"), legend = colnames(powerShort[8:10]))
-dev.off()
+legend("topright", lty = 1, bty = "n", col = c("black","red", "blue"), legend = colnames(powerShort[7:9]))
+
+# plot 2,2 Global Active Power
+plot(x = powerShort$fullTime,
+     y = powerShort$Global_active_power,
+     type = "l",
+     ylab = "Global_active_power",
+     xlab = "datetime")
+
+dev.off() #close graphics device  
