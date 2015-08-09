@@ -37,7 +37,6 @@ powerData[,c(3:9)] <- sapply(powerData[,c(3:9)], as.numeric) # change class to n
 powerData$fullTime <- dmy_hms(paste(powerData$Date, powerData$Time)) # create full time variable POSIXct class
 # Plot 3 Creation ---------------------------------------------------------
 
-
 png("./ExData_Plotting/plot3.png", width=480, height=480)# set dimensions of plot
 plot(x = powerShort$fullTime,
      y = powerShort$Sub_metering_1,
@@ -50,5 +49,4 @@ points(x = powerShort$fullTime,
        y = powerShort$Sub_metering_3,
        type = "l", col = "blue")
 legend("topright", lty = 1, col = c("black","red", "blue"), legend = colnames(powerShort[7:9]))
-dev.off()
 dev.off()
